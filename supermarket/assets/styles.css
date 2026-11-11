@@ -604,3 +604,8 @@ html[data-nav="backwards"]::view-transition-new(root) { animation-name: pt-in-le
   .about-hero__main { aspect-ratio: 4 / 3; }
   .about-hero__media { flex: none; min-height: 0; aspect-ratio: 16 / 9; }
 }
+/* Hero (home) en celular: el video se ve completo (16:9), sin recortar; el texto va debajo */
+@media (max-width: 899px) {
+  .hero__media { height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
+  .hero__overlay { position: static; background: none; }
+}
