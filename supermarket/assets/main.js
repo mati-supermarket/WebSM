@@ -458,3 +458,17 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { items.forEach(teardown); start(); });
   start();
 })();
+
+/* ---- Home: botón de sonido del video ---- */
+(function () {
+  var btn = document.querySelector('.hero__sound');
+  var video = document.querySelector('.hero__media');
+  if (!btn || !video) return;
+  btn.addEventListener('click', function () {
+    var turnOn = video.muted;                 // estaba en silencio -> activar sonido
+    video.muted = !turnOn;
+    if (turnOn) { video.volume = 1; var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+    btn.setAttribute('aria-pressed', turnOn ? 'true' : 'false');
+    btn.setAttribute('aria-label', turnOn ? 'Turn sound off' : 'Turn sound on');
+  });
+})();

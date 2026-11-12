@@ -7,7 +7,7 @@ import pathlib
 
 OUT = pathlib.Path(__file__).parent
 CDN = "assets/"
-REEL_MP4 = ("assets/videos/Web-Reel-Sin-Logo-Al-Final-transcode.mp4")
+REEL_MP4 = ("assets/videos/SM_REEL_2026_HOME_low.mp4")
 
 # CAMBIAR antes de publicar: dominio final, sin barra al final.
 # Se usa para <link rel="canonical">, Open Graph, robots.txt y sitemap.xml.
@@ -212,6 +212,10 @@ for i, (name, slug) in enumerate(featured):
 home_body = f"""<section class="hero">
   <video class="hero__media" src="{REEL_MP4}" autoplay muted loop playsinline preload="metadata"
          poster="{IMG['board']}"></video>
+          <button class="hero__sound" type="button" aria-pressed="false" aria-label="Turn sound on">
+    <svg class="ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+    <svg class="ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+  </button>
   <div class="hero__overlay">
   <div class="hero__overlay-inner">
     <h1 class="hero__line">We are Supermarket. A global force of creativity.</h1>
